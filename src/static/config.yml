@@ -7,7 +7,7 @@ collections:
   - name: "pages"
     label: "Pages"
     label_singular: 'Page' # Used in the UI, ie: "New Post"
-    folder: 'blog'
+    folder: 'content/blog'
     create: true
     files:
     - label: "Home"
