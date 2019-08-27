@@ -5,4 +5,4 @@ cats: []
 ---
 # Croatia
 
-![](/src/assets/cody-black-nm89mzvar5i-unsplash.jpg)
+![](/assets/cody-black-nm89mzvar5i-unsplash.jpg)
