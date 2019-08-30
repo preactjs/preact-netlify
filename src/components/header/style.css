@@ -22,20 +22,36 @@
 	display: inline-block;
 	height: 56px;
 	line-height: 100px;
-	padding: 0 15px;
+	margin: 0 15px;
 	min-width: 50px;
 	text-align: center;
 	background: rgba(255,255,255,0);
 	text-decoration: none;
 	color: #333;
 	will-change: background-color;
+	transition-property: color;
+	transition-duration: 300ms;
+	text-transform: uppercase;
+	position: relative;
 }
 
 .header nav a:hover,
 .header nav a:active {
-	background: rgba(0,0,0,0.2);
+	color: #FFC107;
 }
 
-.header nav a.active {
-	background: rgba(0,0,0,0.4);
+.header nav a:after {
+	content: '';
+	width: 0%;
+	border-bottom: 3px solid #FFC107;
+	position: absolute;
+	bottom: -12px;
+	left: 0;
+	transition-duration: width;
+	transition-duration: 300ms;
+
+}
+
+.header nav a:hover:after {
+	width: 70%
 }
