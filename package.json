@@ -22,6 +22,8 @@
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
+    "esm": "^3.2.25",
+    "glob": "^7.1.4",
     "jest": "^21.2.1",
     "jest-preset-preact": "^1.0.0",
     "per-env": "^1.0.2",
