@@ -1,7 +1,6 @@
 .home {
   padding: 56px 20px;
   width: 100%;
-  display: flex;
 }
 
 .about {
@@ -40,5 +39,23 @@
 .author{
 	font-size: 20px;
     color: black;
+}
 
+.bio{
+	margin: 40px auto;
+	display:flex;
+	justify-content: center;
+}
+
+.bioleft,.bioright{
+	max-width: 25%;
+	text-align: justify;
+}
+
+.bioleft{
+	padding-right: 16px;
+}
+
+.bioright{
+	padding-left: 16px;
 }
