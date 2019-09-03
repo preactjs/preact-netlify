@@ -1,5 +1,3 @@
-const { writeFileSync } = require('fs');
-const { join } = require('path');
 const { generateFileList } = require('./index');
 
 class PreactCliMDCrawlerPlugin {
@@ -8,8 +6,11 @@ class PreactCliMDCrawlerPlugin {
 	}
 	apply(compiler) {
 		compiler.hooks.emit.tapAsync('PreactCliMDCrawlerPlugin', (compilation, callback) => {
-			const files = generateFileList(this._options.src);
-			writeFileSync(join(__dirname, '..', 'assets', this._options.fileName || 'source-fs.json'), JSON.stringify(files));
+			const files = JSON.stringify(generateFileList(this._options.src));
+			compilation.assets[this._options.fileName  || 'source-fs.json'] = {
+				source: () => files,
+				size: () => files.length
+			};
 			callback();
 		});
 	}
