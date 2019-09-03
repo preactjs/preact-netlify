@@ -40,8 +40,8 @@ function getFolders(source) {
 	return result;
 }
 
-function generateFileList() {
-	return getFolders(join(__dirname,'..','..','content'));
+function generateFileList(src) {
+	return getFolders(src);
 }
 
 module.exports = {
