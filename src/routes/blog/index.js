@@ -12,6 +12,7 @@ const blogs = (props) => {
 	if (dataResponse.nodes && dataResponse.nodes[0] && dataResponse.nodes[0].edges) {
 		blogs = dataResponse.nodes[0].edges;
 	}
+	console.log({dataResponse});
 	return (
 		<div class={style.pageBlogs}>
 			<h1 class={style.pageTitle}>My Blogs</h1>
