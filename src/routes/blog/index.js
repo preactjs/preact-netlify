@@ -3,14 +3,27 @@ import { useState, useEffect } from 'preact/hooks';
 import style from './style';
 
 const blogs = (props) => {
-	const [blogs, setBlogs] = useState({});
+	const [dataResponse, setDataResponse] = useState({});
 	useEffect(async () => {
-		setBlogs(await(await fetch('/source-fs.json')).json());
+		setDataResponse(await(await fetch('/source-fs.json')).json());
 	}, []);
-	console.log({blogs});
+	let blogs = [];
+	if (dataResponse.nodes && dataResponse.nodes[0] && dataResponse.nodes[0].edges) {
+		blogs = dataResponse.nodes[0].edges;
+	}
 	return (
-		<div>
-			hi
+		<div class={style.pageBlogs}>
+			<h1 class={style.pageTitle}>My Blogs</h1>
+			{blogs.map(blog => (
+				<article>
+					<h2>{blog.details.title}</h2>
+					<div>
+						{
+							(blog.details.tags.split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)
+						}
+					</div>
+				</article>
+			))}
 		</div>
 	);
 };

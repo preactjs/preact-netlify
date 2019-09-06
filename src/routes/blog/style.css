@@ -1,0 +1,36 @@
+.pageBlogs {
+  padding: 32px;
+}
+
+.pageTitle {
+  position: relative;
+  display: inline-block;
+}
+
+.pageTitle:after {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  content: '';
+  width: 75%;
+  border-bottom: 2px solid #FFC107;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.tag {
+  padding: 8px;
+  margin-left: 8px;
+  text-transform: lowercase;
+  background-color: #ffdd037c;
+  border-radius: 8px;
+  color: #999;
+  font-size: 12px;
+}
+
+.tag:first-child {
+  margin-left: 0px;
+}
