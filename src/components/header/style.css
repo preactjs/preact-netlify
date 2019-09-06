@@ -36,11 +36,12 @@
 }
 
 .header nav a:hover,
-.header nav a:active {
+.header nav a:active,
+.header nav a.active {
 	color: #FFC107;
 }
 
-.header nav a:after {
+.header nav a:after, .header nav a.active:after {
 	content: '';
 	width: 0%;
 	border-bottom: 3px solid #FFC107;
