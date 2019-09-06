@@ -6,6 +6,7 @@ import Header from './header';
 // Code-splitting is automated for routes
 import Home from '../routes/home';
 import Blog from '../routes/blog';
+import Photographs from '../routes/photographs';
 
 export default class App extends Component {
 
@@ -24,6 +25,7 @@ export default class App extends Component {
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
 					<Blog path="/blog/" />
+					<Photographs path="/photography/" />
 				</Router>
 			</div>
 		);
