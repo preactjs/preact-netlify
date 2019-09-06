@@ -1,4 +1,5 @@
 import { h } from 'preact';
+import { Link } from 'preact-router';
 import { useState, useEffect } from 'preact/hooks';
 import style from './style';
 
@@ -15,17 +16,19 @@ const blogs = (props) => {
 		<div class={style.pageBlogs}>
 			<h1 class={style.pageTitle}>My Blogs</h1>
 			{blogs.map(blog => (
-				<article>
-					<h2>{blog.details.title}</h2>
-					<div>
-						{
-							((blog.details.tags||'').split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)
-						}
-					</div>
-					<p class={style.preview}>
-						{blog.preview}
-					</p>
-				</article>
+				<Link href={`/blog/${blog.id}`}>
+					<article>
+						<h2>{blog.details.title}</h2>
+						<div>
+							{
+								((blog.details.tags||'').split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)
+							}
+						</div>
+						<p class={style.preview}>
+							{blog.preview}
+						</p>
+					</article>
+				</Link>
 			))}
 		</div>
 	);

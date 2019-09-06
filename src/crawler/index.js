@@ -1,21 +1,22 @@
-import * as fs from "fs";
-import { join } from "path";
+import * as fs from 'fs';
+import { join } from 'path';
 
 const PREVIEW_LENGTH = 1000;
 
 function getDetails(data) {
 	const matadata = data.match(/---(.*\n)*---/)[0];
 	return matadata.match(/(.*):(.*)/).reduce((obj, detail) => {
-		const value = detail.substr(detail.indexOf(":") + 2);
-		const key = detail.substr(0, detail.indexOf(":"));
+		const value = detail.substr(detail.indexOf(':') + 2);
+		const key = detail.substr(0, detail.indexOf(':'));
 		obj[key] = value;
 		return obj;
 	}, {});
 }
 
 function getPreview(data) {
-	let preview = data.replace(/---(.*\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/\n/g, '').replace(/#/g,'');
-	return preview.length < PREVIEW_LENGTH ? preview : preview.substr(0, PREVIEW_LENGTH);
+	let preview = data.replace(/---(.*\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/\n/,'');
+
+	return preview.substr(0, (preview.indexOf('\n') -1));
 }
 
 function getFolders(source) {
