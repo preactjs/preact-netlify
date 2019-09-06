@@ -19,9 +19,12 @@ const blogs = (props) => {
 					<h2>{blog.details.title}</h2>
 					<div>
 						{
-							(blog.details.tags.split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)
+							((blog.details.tags||'').split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)
 						}
 					</div>
+					<p class={style.preview}>
+						{blog.preview}
+					</p>
 				</article>
 			))}
 		</div>

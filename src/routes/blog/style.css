@@ -1,5 +1,5 @@
 .pageBlogs {
-  padding: 32px;
+  padding: 0 5%;
 }
 
 .pageTitle {
@@ -33,4 +33,8 @@ h2 {
 
 .tag:first-child {
   margin-left: 0px;
+}
+
+.preview {
+  width: 50%;
 }

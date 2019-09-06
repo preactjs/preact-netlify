@@ -1,19 +1,21 @@
-import * as fs from 'fs';
-import { join } from 'path';
+import * as fs from "fs";
+import { join } from "path";
+
+const PREVIEW_LENGTH = 1000;
 
 function getDetails(data) {
 	const matadata = data.match(/---(.*\n)*---/)[0];
-	return matadata.match(/(.*):(.*)/g).reduce((obj, detail) => {
-		const value = (detail.substr(detail.indexOf(':') + 2));
-		const key = (detail.substr(0, detail.indexOf(':') ));
+	return matadata.match(/(.*):(.*)/).reduce((obj, detail) => {
+		const value = detail.substr(detail.indexOf(":") + 2);
+		const key = detail.substr(0, detail.indexOf(":"));
 		obj[key] = value;
 		return obj;
 	}, {});
 }
 
-function getMarkdownDetails(file) {
-	const data = fs.readFileSync(file, 'utf-8');
-	return getDetails(data);
+function getPreview(data) {
+	let preview = data.replace(/---(.*\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/\n/g, '').replace(/#/g,'');
+	return preview.length < PREVIEW_LENGTH ? preview : preview.substr(0, PREVIEW_LENGTH);
 }
 
 function getFolders(source) {
@@ -22,14 +24,18 @@ function getFolders(source) {
 	const getAllListings = source =>
 		fs.readdirSync(source).map(name => join(source, name));
 	let allContent = getAllListings(source);
-	const edges = allContent.filter(isFile).map(file => ({
-		id: file.substr(file.lastIndexOf('/') + 1),
-		path: file,
-		details: getMarkdownDetails(file)
-	}));
-	const nodes= allContent.filter(isDirectory).map(dir => getFolders(dir));
+	const edges = allContent.filter(isFile).map(file => {
+		const data = fs.readFileSync(file, 'utf-8');
+		return {
+			id: file.substr(file.lastIndexOf('/') + 1),
+			path: file,
+			details: getDetails(data),
+			preview: getPreview(data)
+		};
+	});
+	const nodes = allContent.filter(isDirectory).map(dir => getFolders(dir));
 	const result = {
-		id: source.substr(source.lastIndexOf('/')+1)
+		id: source.substr(source.lastIndexOf('/') + 1)
 	};
 	if (nodes.length) {
 		result.nodes = nodes;
