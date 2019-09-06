@@ -10,7 +10,7 @@
 
 .pageTitle:after {
   position: absolute;
-  bottom: 0px;
+  bottom: -5px;
   left: 0px;
   content: '';
   width: 75%;
