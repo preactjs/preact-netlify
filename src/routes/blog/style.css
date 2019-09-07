@@ -6,6 +6,7 @@
   position: relative;
   display: inline-block;
   font-weight: 500;
+  font-family: Lora,serif;
 }
 
 .pageTitle:after {
