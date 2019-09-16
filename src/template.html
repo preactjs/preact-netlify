@@ -7,8 +7,6 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>manifest.json">
-		<link href="https://fonts.googleapis.com/css?family=Courgette&text=Jane%20Doe" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
 		<% if (htmlWebpackPlugin.options.manifest.theme_color) { %>
 			<meta name="theme-color" content="<%= htmlWebpackPlugin.options.manifest.theme_color %>">
 		<% } %>
@@ -40,5 +38,7 @@
 		<script type="__PREACT_CLI_DATA__">
 			<%= JSON.stringify(htmlWebpackPlugin.options.CLI_DATA) %>
 		</script>
+		<link href="https://fonts.googleapis.com/css?family=Courgette&text=Jane%20Doe" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
 	</body>
 </html>
