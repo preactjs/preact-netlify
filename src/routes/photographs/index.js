@@ -16,7 +16,7 @@ const photographs = (props) => {
 				<h1 class={style.pageTitle}>Photographs</h1>
 				{photographs.map(photograph =>
 					(<div>
-						<img class={style.photo} src={photograph.details.photo} />
+						<img loading="lazy" class={style.photo} src={photograph.details.photo} />
 						<caption class={style.caption}>{photograph.details.title}</caption>
 					</div>)
 				)}
