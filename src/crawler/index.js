@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import { join } from 'path';
+const fs = require('fs');
+const { join } = require('path');
 
 function getDetails(data) {
 	const matadata = data.match(/---(.*\n)*---/)[0];

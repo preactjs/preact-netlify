@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-
+import { Provider } from '../prerender-data-provider';
 import Header from './header';
 
 // Code-splitting is automated for routes
@@ -18,16 +18,18 @@ export default class App extends Component {
 		this.currentUrl = e.url;
 	};
 
-	render() {
+	render(props) {
 		return (
-			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Blog path="/blog/" />
-					<Photographs path="/photography/" />
-				</Router>
-			</div>
+			<Provider value={props}>
+				<div id="app">
+					<Header />
+					<Router onChange={this.handleRoute}>
+						<Home path="/" />
+						<Blog path="/blog/" />
+						<Photographs path="/photography/" />
+					</Router>
+				</div>
+			</Provider>
 		);
 	}
 }
