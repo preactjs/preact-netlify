@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { Link } from 'preact-router';
-import { usePrerenderData } from '../../prerender-data-provider';
+import { usePrerenderData } from '@preact/prerender-data-provider';
 import style from './style';
 
 const blogs = (props) => {

@@ -935,6 +935,11 @@
   dependencies:
     loader-utils "^1.1.0"
 
+"@preact/prerender-data-provider@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@preact/prerender-data-provider/-/prerender-data-provider-0.0.1.tgz#6064d2a7bf1765386fc9f0a43d2ada0866159250"
+  integrity sha512-ccgbdQHD0k3pIubybQ9HeGl7EAgebnFU7Lwq9OmeyjMTFm2HHCKKcbREHldDsMdYOtOLznB37CY03wmwrHYxNw==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
