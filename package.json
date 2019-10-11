@@ -7,9 +7,8 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build",
-    "serve": "preact build && preact serve",
-    "dev": "preact watch",
+    "build": "preact build --prerenderUrls ./prerender-urls.js",
+    "dev": "preact watch --prerenderUrls ./prerender-urls.js",
     "lint": "eslint src",
     "test": "jest"
   },
