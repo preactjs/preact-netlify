@@ -20,7 +20,7 @@ module.exports = () => {
 		return {
 			url: `/blog/${blog.id}`,
 			data: {
-				title: blog.details.title,
+				details: blog.details,
 				content: data
 			}
 		};

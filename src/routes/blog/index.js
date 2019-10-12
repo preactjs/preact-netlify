@@ -13,7 +13,8 @@ const blogs = (props) => {
 	if (data && data.data) {
 		return (
 			<article class={style.blogcontainer}>
-				<h1 class={style.blogtitle}>{data.data.title}</h1>
+				<h1 class={style.blogtitle}>{data.data.details.title}</h1>
+                                <caption class={style.blogsubtitle}>{data.data.details.subtitle}</caption>
 				<div class={style.blogbody}>
 					<Markdown>{ data.data.content }</Markdown>
 				</div>
