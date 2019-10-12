@@ -14,7 +14,7 @@ const blogs = (props) => {
 		return (
 			<article class={style.blogcontainer}>
 				<h1 class={style.blogtitle}>{data.data.details.title}</h1>
-                                <caption class={style.blogsubtitle}>{JSON.stringify(data.data.details)}</caption>
+                                <caption class={style.blogsubtitle}>{data.data.details.subtitle}</caption>
 				<div class={style.blogbody}>
 					<Markdown>{ data.data.content }</Markdown>
 				</div>
