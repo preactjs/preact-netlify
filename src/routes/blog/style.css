@@ -17,3 +17,8 @@
 .blogbody img {
   max-width: 100%;
 }
+
+.blogsubtitle {
+  font-weight:300;
+  color: #999;
+}
