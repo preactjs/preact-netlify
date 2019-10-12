@@ -6,10 +6,14 @@
 }
 
 .blogtitle {
-  font-size: 1.8rem;
-  font-weight: 500;
+  font-size: 2.2rem;
+  font-weight: 400;
 }
 
 .blogbody {
   font-size: 1.2rem;
+}
+
+.blogbody img {
+  max-width: 100%;
 }
