@@ -10,8 +10,15 @@ const blogs = (props) => {
 		return (<h1>Loading</h1>);
 	}
 
-	if (data && data.data && data.data.content) {
-		return (<Markdown>{ data.data.content }</Markdown>);
+	if (data && data.data) {
+		return (
+			<article class={style.blogcontainer}>
+				<h1 class={style.blogtitle}>{data.data.title}</h1>
+				<div class={style.blogbody}>
+					<Markdown>{ data.data.content }</Markdown>
+				</div>
+			</article>
+		);
 	}
 
 	return (<h1>Blog</h1>);
