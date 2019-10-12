@@ -46,3 +46,9 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media all and (max-width: 728px) {
+  .preview {
+    width: 100%;
+  }
+}

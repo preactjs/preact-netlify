@@ -56,3 +56,9 @@
 .header nav a:hover:after, .header nav a.active:after {
 	width: 70%
 }
+
+@media all and (max-width: 728px) {
+  nav {
+    display: none;
+  }
+}
