@@ -11,12 +11,14 @@ const blogs = (props) => {
 	}
 
 	if (data && data.data) {
+		const { details, content } = data.data;
 		return (
 			<article class={style.blogcontainer}>
-				<h1 class={style.blogtitle}>{data.data.details.title}</h1>
-                                <caption class={style.blogsubtitle}>{data.data.details.subtitle}</caption>
+				<h1 class={style.blogtitle}>{details.title}</h1>
+				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
+				{ details.cover && <img class={style.blogcover} src={details.cover} /> }
 				<div class={style.blogbody}>
-					<Markdown>{ data.data.content }</Markdown>
+					<Markdown>{ content }</Markdown>
 				</div>
 			</article>
 		);

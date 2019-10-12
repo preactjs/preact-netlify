@@ -8,6 +8,7 @@
 .blogtitle {
   font-size: 2.2rem;
   font-weight: 400;
+  margin-bottom: 0;
 }
 
 .blogbody {
@@ -19,8 +20,13 @@
 }
 
 .blogsubtitle {
-  font-weight:300;
-  color: #999;
+  color: #aaa;
   display: block;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
 
+.blogcover {
+  width: 100%;
 }
