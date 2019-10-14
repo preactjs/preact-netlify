@@ -12,7 +12,7 @@ const photographs = (props) => {
 					<div>&nbsp;</div>
 					<div>Cheers 🍻</div>
 				</p>
-				<form name="contact" method="POST" data-netlify="true">
+				<form name="contact" method="POST" data-netlify="true" action="/contact/success">
 					<p>
 						<input type="text" name="name" placeholder="Name" required />
 					</p>
