@@ -47,6 +47,27 @@ h2 {
   text-overflow: ellipsis;
 }
 
+.loadingPlaceholder .blogtitle {
+  height: 24px;
+}
+
+.loadingPlaceholder .loadingBody {
+  height: 12px;
+  margin-bottom: 8px;
+}
+
+.loadingPlaceholder .loadingBody:nth-child(2) {
+  width: 90%;
+}
+
+.loadingPlaceholder .loadingBody:nth-child(3) {
+  width: 80%;
+}
+
+.loadingPlaceholder .loadingBody:nth-child(4) {
+  width: 65%;
+}
+
 @media all and (max-width: 728px) {
   .preview {
     width: 100%;

@@ -58,7 +58,11 @@
 }
 
 @media all and (max-width: 728px) {
-  nav {
-    display: none;
+	.header h1{
+		font-size: 2rem;
+	}
+  .header nav a{
+		line-height: 100px;
+		margin: 0 8px;
   }
 }

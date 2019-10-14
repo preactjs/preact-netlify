@@ -47,7 +47,7 @@
 	justify-content: center;
 }
 
-.bioleft,.bioright{
+.bioleft, .bioright{
 	max-width: 25%;
 	text-align: justify;
 }
@@ -59,3 +59,30 @@
 .bioright{
 	padding-left: 16px;
 }
+
+@media all and (max-width: 728px) {
+	.home {
+		padding: 16px;
+	}
+
+  .about, .bio {
+		flex-direction: column;
+	}
+
+	.details {
+		padding: 16px 0 0 0;
+		font-size: 1.5rem;
+	}
+
+	.image {
+		height: auto;
+		width: 100%;
+	}
+
+	.bioleft, .bioright{
+		max-width: 100%;
+		text-align: justify;
+		padding: 0;
+	}
+}
+
