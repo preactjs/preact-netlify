@@ -2,7 +2,7 @@
   max-width: 728px;
   width: 100%;
   margin: 0 auto 10em;
-  line-height: 1.5;
+  line-height: 1.6rem;
 }
 
 .blogtitle {
@@ -12,7 +12,7 @@
 }
 
 .blogbody {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .blogbody img {
@@ -33,7 +33,8 @@
 }
 
 .blogcover {
-  width: 100%;
+  height: 400px;
+  background-size: cover;
 }
 
 .loadingPlaceholder .blogtitle {

@@ -1,5 +1,4 @@
 import { h } from 'preact';
-import { Link } from 'preact-router';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Markdown from 'markdown-to-jsx';
 import style from './style';
@@ -34,7 +33,7 @@ function getBlogBody(data, isLoading) {
 			<div>
 				<h1 class={style.blogtitle}>{details.title}</h1>
 				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
-				{ details.cover && <img class={style.blogcover} src={details.cover} /> }
+				{ details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
 				<div class={style.blogbody}>
 					<Markdown>{ content }</Markdown>
 				</div>
