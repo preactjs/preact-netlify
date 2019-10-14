@@ -35,6 +35,7 @@
 .blogcover {
   height: 400px;
   background-size: cover;
+  background-color: #eee;
 }
 
 .loadingPlaceholder .blogtitle {
