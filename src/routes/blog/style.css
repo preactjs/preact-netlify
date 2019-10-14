@@ -19,6 +19,11 @@
   max-width: 100%;
 }
 
+.blogbody code {
+  max-width: 100%;
+  overflow: scroll;
+}
+
 .blogsubtitle {
   color: #aaa;
   display: block;

@@ -7,7 +7,7 @@ import Header from './header';
 import Home from '../routes/home';
 import Blogs from '../routes/blogs';
 import Blog from '../routes/blog';
-import Photographs from '../routes/photographs';
+import Contact from '../routes/contact';
 
 export default class App extends Component {
 
@@ -28,7 +28,7 @@ export default class App extends Component {
 						<Home path="/" />
 						<Blogs path="/blogs/" />
 						<Blog path="/blog/:name" />
-						<Photographs path="/photography/" />
+						<Contact path="/contact/" />
 					</Router>
 				</div>
 			</Provider>

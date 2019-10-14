@@ -5,7 +5,8 @@ const fs = require('fs');
 const [blogs, images] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
 	const pages = [
-		{ url: '/' }
+		{ url: '/' },
+		{ url: '/contact/' }
 	];
 
 	// adding blogs list posts page
@@ -25,12 +26,6 @@ module.exports = () => {
 			}
 		};
 	}));
-
-
-	pages.push({
-		url: '/photography/',
-		data: images
-	});
 
 	return pages;
 };
