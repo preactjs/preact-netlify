@@ -12,7 +12,8 @@ const photographs = (props) => {
 					<div>&nbsp;</div>
 					<div>Cheers 🍻</div>
 				</p>
-				<form name="contact" method="POST" data-netlify="true" action="/contact/success">
+				<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+					<input type="hidden" name="form-name" value="contact" />
 					<p>
 						<input type="text" name="name" placeholder="Name" required />
 					</p>
