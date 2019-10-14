@@ -6,25 +6,41 @@ import style from './style';
 
 const blogs = (props) => {
 	const [data, isLoading] = usePrerenderData(props);
+	return (
+		<article class={style.blogcontainer}>
+			{getBlogBody(data, isLoading)}
+		</article>
+	);
+};
+
+function getBlogBody(data, isLoading) {
 	if (isLoading) {
-		return (<h1>Loading</h1>);
+		return (
+			<div class={style.loadingPlaceholder}>
+				<h1 class={`${style.blogtitle} loading`} >&nbsp;</h1>
+				<caption class={`${style.blogsubtitle} loading`}>&nbsp;</caption>
+				<div class={style.blogbody}>
+					<div class={`${style.loadingBody} loading`} />
+					<div class={`${style.loadingBody} loading`} />
+					<div class={`${style.loadingBody} loading`} />
+				</div>
+			</div>
+		);
 	}
 
 	if (data && data.data) {
 		const { details, content } = data.data;
 		return (
-			<article class={style.blogcontainer}>
+			<div>
 				<h1 class={style.blogtitle}>{details.title}</h1>
 				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
 				{ details.cover && <img class={style.blogcover} src={details.cover} /> }
 				<div class={style.blogbody}>
 					<Markdown>{ content }</Markdown>
 				</div>
-			</article>
+			</div>
 		);
 	}
-
-	return (<h1>Blog</h1>);
-};
+}
 
 export default blogs;

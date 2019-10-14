@@ -8,7 +8,7 @@
 .blogtitle {
   font-size: 2.2rem;
   font-weight: 400;
-  margin-bottom: 0;
+  margin-bottom: 8px;
 }
 
 .blogbody {
@@ -34,4 +34,25 @@
 
 .blogcover {
   width: 100%;
+}
+
+.loadingPlaceholder .blogtitle {
+  height: 24px;
+}
+
+.loadingPlaceholder .blogsubtitle {
+  height: 18px;
+}
+
+.loadingBody {
+  height: 12px;
+  margin-bottom: 8px;
+}
+
+.loadingBody:nth-child(1) {
+  width: 90%;
+}
+
+.loadingBody:nth-child(3) {
+  width: 65%;
 }
