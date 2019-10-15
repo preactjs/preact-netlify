@@ -9,6 +9,7 @@
   font-size: 2.2rem;
   font-weight: 400;
   margin-bottom: 8px;
+  line-height: 1;
 }
 
 .blogbody {
@@ -33,9 +34,10 @@
 }
 
 .blogcover {
-  height: 400px;
+  height: 30vh;
   background-size: cover;
   background-color: #eee;
+  background-position: center;
 }
 
 .loadingPlaceholder .blogtitle {
