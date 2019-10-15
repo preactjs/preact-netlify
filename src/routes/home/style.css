@@ -12,7 +12,10 @@
 }
 
 .image {
-  height: 30vw;
+	height: 30vw;
+	background-image: url(/assets/profile.jpg);
+	background-size: cover;
+	background-position: center;
 }
 
 .quote {
@@ -75,7 +78,7 @@
 	}
 
 	.image {
-		height: auto;
+		height: 50vw;
 		width: 100%;
 	}
 
