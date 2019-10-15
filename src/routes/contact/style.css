@@ -31,7 +31,6 @@
 
 .pageContact .formWrapper {
   display: flex;
-  flex-direction: row;
 }
 
 .pageContact form {
@@ -42,4 +41,10 @@
   padding: 8px;
   font-size: 1rem;
   border-radius: 5px;
+}
+
+@media all and (max-width: 728px) {
+	.formWrapper {
+		flex-direction: column;
+  }
 }
