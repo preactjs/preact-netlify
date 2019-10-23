@@ -1,5 +1,7 @@
 # blog
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/preactjs/preact-netlify.svg)](https://greenkeeper.io/)
+
 ## CLI Commands
 
 ``` bash
