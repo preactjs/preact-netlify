@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { join } = require('path');
+const { join, sep } = require('path');
 
 function getDetails(data) {
 	const matadata = data.match(/---(.*\n)*---/)[0];
@@ -27,7 +27,7 @@ function getFolders(source) {
 	const edges = allContent.filter(isFile).map(file => {
 		const data = fs.readFileSync(file, 'utf-8');
 		return {
-			id: file.substr(file.lastIndexOf('/') + 1),
+			id: file.substr(file.lastIndexOf(sep) + 1),
 			path: file,
 			details: getDetails(data),
 			preview: getPreview(data)
@@ -35,7 +35,7 @@ function getFolders(source) {
 	});
 	const nodes = allContent.filter(isDirectory).map(dir => getFolders(dir));
 	const result = {
-		id: source.substr(source.lastIndexOf('/') + 1)
+		id: source.substr(source.lastIndexOf(sep) + 1)
 	};
 	if (nodes.length) {
 		result.nodes = nodes;
