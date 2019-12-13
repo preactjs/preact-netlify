@@ -2,7 +2,7 @@ const fs = require('fs');
 const { join, sep } = require('path');
 
 function getDetails(data) {
-	const matadata = data.match(/---(.*\n)*---/)[0];
+	const matadata = data.match(/---(.*(\r)?\n)*---/g)[0];
 	const details =  matadata.match(/(.*):(.*)/g).reduce((obj, detail) => {
 		const value = detail.substr(detail.indexOf(':') + 2);
 		const key = detail.substr(0, detail.indexOf(':'));
@@ -13,7 +13,7 @@ function getDetails(data) {
 }
 
 function getPreview(data) {
-	let preview = data.replace(/---(.*\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/\n/,'');
+	let preview = data.replace(/---(.*(\r)?\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/(\r)?\n/,'');
 	preview = preview.substr(0, (preview.indexOf('\n') -1));
 	return preview.length < 500? preview : preview.substr(0, 500);
 }
@@ -26,6 +26,7 @@ function getFolders(source) {
 	let allContent = getAllListings(source);
 	const edges = allContent.filter(isFile).map(file => {
 		const data = fs.readFileSync(file, 'utf-8');
+		// console.log('get folders', JSON.stringify(data))
 		return {
 			id: file.substr(file.lastIndexOf(sep) + 1),
 			path: file,
