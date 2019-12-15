@@ -35,7 +35,7 @@ function getBlogBody(data, isLoading) {
 				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
 				{ details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
 				<div class={style.blogbody}>
-					<Markdown>{ content] /*hack for getting just content*/ }</Markdown>
+					<Markdown>{ content }</Markdown>
 				</div>
 			</div>
 		);
