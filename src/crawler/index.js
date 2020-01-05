@@ -55,7 +55,7 @@ function getFolders(source) {
 		const id = file.substr(file.lastIndexOf(sep) + 1);
 		const format = getExtensionFromFilename(id);
 		return {
-			id: file.substr(file.lastIndexOf(sep) + 1),
+			id: id,
 			path: file,
 			details: getDetails(format, data),
 			preview: getPreview(data)
