@@ -23,7 +23,8 @@ function getDetails(format, data) {
 	const formatNormalised = format.toLowerCase();
 
 	switch (formatNormalised) {
-		case 'md': {
+		case 'md':
+		case 'markdown': {
 			return parseMarkdownToObject(data);
 		}
 
