@@ -9,5 +9,32 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script type="module">
+    import htm from 'https://unpkg.com/htm?module'
+    const html = htm.bind(h);
+    const PostPreview = createClass({
+      render: function() {
+        const {entry, widgetFor} = this.props;
+        const image = entry.getIn(['data', 'cover'])
+        let imageMarkup = '';
+        if (image) {
+          imageMarkup = html`<div><img src='${image.toString()}'/></div>`;
+        }
+        return (
+          html`
+            <div>
+              <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
+              <caption className='blogSubTitle'>${entry.getIn(['data', 'subtitle'])}</caption>
+              ${imageMarkup}
+              <div className='text'>${widgetFor('body')}</div>
+            </div>
+          `
+        );
+      }
+    });
+    CMS.registerPreviewStyle("/preview.css");
+    CMS.registerPreviewTemplate("pages", PostPreview);
+  </script>
 </body>
 </html>

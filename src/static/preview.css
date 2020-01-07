@@ -1,0 +1,31 @@
+html {
+  font-family: Helvetica Neue,arial,sans-serif;
+  color: #333;
+  max-width: 728px;
+  width: 100%;
+  margin: 0 auto 10em;
+  line-height: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #000;
+}
+
+.blogTitle {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.blogSubTitle{
+  color: #aaa;
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}

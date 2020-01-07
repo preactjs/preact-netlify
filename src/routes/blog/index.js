@@ -1,6 +1,9 @@
 import { h } from 'preact';
+import { Suspense } from 'preact/compat';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Markdown from 'markdown-to-jsx';
+import { FormattedCodeBlock } from './formatted-code-block';
+
 import style from './style';
 
 const blogs = (props) => {
@@ -11,6 +14,18 @@ const blogs = (props) => {
 		</article>
 	);
 };
+
+function CodeBlock(props) {
+	const fallback = <pre><code>{props.children}</code></pre>;
+	if (typeof window === 'undefined') {
+		return (fallback);
+	}
+	return (
+		<Suspense fallback={fallback}>
+			<FormattedCodeBlock {...props} />
+		</Suspense>
+	);
+}
 
 function getBlogBody(data, isLoading) {
 	if (isLoading) {
@@ -35,7 +50,14 @@ function getBlogBody(data, isLoading) {
 				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
 				{ details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
 				<div class={style.blogbody}>
-					<Markdown>{ content }</Markdown>
+					<Markdown options={{
+						overrides: {
+							code: {
+								component: CodeBlock
+							}
+						}
+					}}
+					>{ content }</Markdown>
 				</div>
 			</div>
 		);
