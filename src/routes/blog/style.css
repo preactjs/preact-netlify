@@ -25,7 +25,7 @@
   text-decoration: underline;
 }
 
-.blogbody code {
+.blogbody pre code {
   display: block;
   max-width: 100%;
   color: rgb(57, 58, 52);
@@ -39,6 +39,14 @@
   line-height: 1.2em;
   tab-size: 4;
   hyphens: none;
+  overflow-x: scroll;
+}
+
+code.inline {
+  display: inline;
+  max-width: none;
+  background: #ddd;
+  padding: 0px 4px;
 }
 
 .blogbody pre pre {
