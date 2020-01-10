@@ -105,3 +105,22 @@ code.inline {
 .loadingBody:nth-child(3) {
   width: 65%;
 }
+
+.inlineImageContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 32px auto;
+}
+
+.inlineImage {
+  max-width: 100%;
+}
+
+.inlineImageTitle {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #777;
+}

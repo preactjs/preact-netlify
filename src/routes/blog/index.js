@@ -27,6 +27,15 @@ function CodeBlock(props) {
 	);
 }
 
+function InlineImage({ alt, title, src }) {
+	return (
+		<div class={style.inlineImageContainer}>
+			<img class={style.inlineImage} src={src} alt={alt} />
+			{title && <span class={style.inlineImageTitle}>{title}</span>}
+		</div>
+	);
+}
+
 function getBlogBody(data, isLoading) {
 	if (isLoading) {
 		return (
@@ -52,6 +61,9 @@ function getBlogBody(data, isLoading) {
 				<div class={style.blogbody}>
 					<Markdown options={{
 						overrides: {
+							img: {
+								component: InlineImage
+							},
 							code: {
 								component: CodeBlock
 							}
