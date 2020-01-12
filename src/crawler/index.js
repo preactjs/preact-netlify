@@ -1,19 +1,6 @@
 const fs = require('fs');
 const { join, sep } = require('path');
-
-function parseMarkdownToObject(markdownString) {
-	const markDown = markdownString.match(/---(.*(\r)?\n)*---/g);
-	const metadata = markDown[0];
-
-	const details = metadata.match(/(.*):(.*)/g).reduce((obj, detail) => {
-		const value = detail.substr(detail.indexOf(':') + 2);
-		const key = detail.substr(0, detail.indexOf(':'));
-		obj[key] = value;
-		return obj;
-	}, {});
-
-	return details;
-}
+const parseMD = require('parse-md').default;
 
 function getExtensionFromFilename(fileName) {
 	return fileName.substr(fileName.lastIndexOf('.') + 1);
@@ -25,7 +12,8 @@ function getDetails(format, data) {
 	switch (formatNormalised) {
 		case 'md':
 		case 'markdown': {
-			return parseMarkdownToObject(data);
+			const { metadata } = parseMD(data);
+			return metadata;
 		}
 
 		case 'json': {
@@ -39,7 +27,8 @@ function getDetails(format, data) {
 }
 
 function getPreview(data) {
-	let preview = data.replace(/---(.*(\r)?\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/(\r)?\n/,'');
+	const { content } = parseMD(data);
+	let preview = content.replace(/---(.*(\r)?\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/(\r)?\n/,'');
 	preview = preview.substr(0, (preview.indexOf('\n') -1));
 	return preview.length < 500? preview : preview.substr(0, 500);
 }
@@ -55,7 +44,8 @@ function getFolders(source) {
 		const id = file.substr(file.lastIndexOf(sep) + 1);
 		const format = getExtensionFromFilename(id);
 		return {
-			id: id,
+			id,
+			format,
 			path: file,
 			details: getDetails(format, data),
 			preview: getPreview(data)
