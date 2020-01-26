@@ -30,7 +30,7 @@
     "preact-cli": "^3.0.0-rc.7",
     "preact-render-spy": "^1.2.1",
     "react-syntax-highlighter": "^12.2.1",
-    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-bundle-analyzer": "^3.4.1"
   },
   "dependencies": {
     "@preact/prerender-data-provider": "^0.0.1",
