@@ -40,7 +40,8 @@
     "preact": "^10.0.0",
     "preact-cli-plugin-netlify": "^1.5.0",
     "preact-render-to-string": "^5.0.6",
-    "preact-router": "^3.0.1"
+    "preact-router": "^3.0.1",
+    "parse-md": "^2.0.4"
   },
   "jest": {
     "preset": "jest-preset-preact"
