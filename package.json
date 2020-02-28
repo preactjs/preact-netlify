@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "blog",
+  "description": "Preact's netlify CMS template",
   "version": "0.1.2",
   "license": "MIT",
   "scripts": {
@@ -45,5 +46,17 @@
   },
   "jest": {
     "preset": "jest-preset-preact"
+  },
+  "bugs": {
+    "url": "https://github.com/preactjs/preact-netlify/issues"
+  },
+  "homepage": "https://github.com/preactjs/preact-netlify#readme",
+  "keywords": [
+    "preact",
+    "netlify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preactjs/preact-netlify.git"
   }
 }
