@@ -37,7 +37,7 @@
     "@preact/prerender-data-provider": "^3.0.1",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
-    "markdown-to-jsx": "^6.10.3",
+    "markdown-to-jsx": "^6.11.4",
     "preact": "^10.4.6",
     "preact-cli-plugin-netlify": "^1.6.0",
     "preact-render-to-string": "^5.1.10",
