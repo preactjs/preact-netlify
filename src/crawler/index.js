@@ -35,11 +35,11 @@ function getPreview(data) {
 
 function getFolders(source) {
 	const isDirectory = source => fs.lstatSync(source).isDirectory();
-	const isFile = source => !fs.lstatSync(source).isDirectory();
+	const isAValidFile = source => !fs.lstatSync(source).isDirectory() && source.endsWith('.md');
 	const getAllListings = source =>
 		fs.readdirSync(source).map(name => join(source, name));
 	let allContent = getAllListings(source);
-	const edges = allContent.filter(isFile).map(file => {
+	const edges = allContent.filter(isAValidFile).map(file => {
 		const data = fs.readFileSync(file, 'utf-8');
 		const id = file.substr(file.lastIndexOf(sep) + 1);
 		const format = getExtensionFromFilename(id);
